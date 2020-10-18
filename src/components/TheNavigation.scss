@@ -1,6 +1,6 @@
-
+@import 'src/assets/scss/_variables';
 .nav-container{
-    max-width: 1640px;
+    max-width: $base-width;
     margin: 0 auto;
 }
 

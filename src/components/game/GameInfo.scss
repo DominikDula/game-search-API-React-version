@@ -1,0 +1,69 @@
+@import 'src/assets/scss/_variables';
+
+
+.game-holder{
+    border-radius: $border-large;
+    
+
+
+    
+}
+
+.game-info{
+    background-color: $secondary-bg;
+    position: relative;
+    border-radius: $border-medium;
+
+
+
+
+ 
+
+    &:hover{
+        transform: scale(1.03);
+        transition: 0.2s ease-in;
+        z-index: 10;
+
+    }
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+    .show-more{
+        position: absolute;
+        left: 50%;
+        top: 350px;
+        transform: translate(-50%, 0%);
+        cursor: pointer;
+        display: none;
+        padding: 0.4em;
+        background: #ff0000b0;
+        border-radius: $border-medium;
+        color: white;
+    }
+    
+    .game-img{
+        height: 250px;
+        display: flex;
+        cursor: pointer;
+        img{
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        // &:hover{
+        //     opacity: 0;
+        // }
+    }
+    .game-desc{
+        height: 110px;
+        h1{
+            font-size: 1.5em;
+            margin: 1.8em 0.5em;
+            
+            &:hover{
+                color: yellow;
+            }
+        }
+    }
+}

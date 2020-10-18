@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from './assets/logo.svg';
 import './App.scss';
 import { Route} from "react-router-dom";
 
 //components
 import TheNavigation from './components/TheNavigation.jsx'  ;
+import SearchGame from './components/game/SearchGame.jsx'  ;
 
 //views
 import Home from "./views/Home.jsx";
@@ -14,7 +14,8 @@ import AllGames from "./views/AllGames.jsx";
 function App() {
   return (
     <div className="App">
-        <TheNavigation></TheNavigation>
+        <TheNavigation />
+        <SearchGame />
         
       <main>
       <Route exact path='/' component={Home}/>
