@@ -8,7 +8,7 @@ import './Home.scss';
 
 function Home() {
 
-    const [game, setgame] = useState('')
+    const [games, setgame] = useState('')
 
     useEffect(() => {
         getTrendingGame()
@@ -41,10 +41,10 @@ function Home() {
     return (
         <div className="home" >
             <h1>New and Trending</h1>
-            <div>
-                {game ? <GameInfo game={game} /> : null}
-            </div>    
-            
+            <div className="grid-container">
+                { games ? games.map(game => ( 
+                <GameInfo key={game.id} games={game} /> )): null}
+            </div> 
 
         </div>
     )
