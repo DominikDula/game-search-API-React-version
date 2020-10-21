@@ -2,6 +2,7 @@ import React , {useState ,useEffect} from 'react'
 
 //components
 import GameInfo from '../components/game/GameInfo.jsx'  ;
+import LoadMore from '../components/LoadMore.jsx'  ;
 
 
 import './Home.scss';
@@ -9,15 +10,41 @@ import './Home.scss';
 function Home() {
 
     const [games, setgame] = useState('')
+    let [next, setnext] = useState('')
+    let [page, setpage] = useState(1)
+
+    const Load = data =>{
+      
+        if(data.target.className === 'next'){
+            if(next === null){
+                return
+            }
+            setpage(page+=1)
+            window.scrollTo(0, 0);
+        }
+        if(data.target.className === 'prev'){
+            if(page<=1){
+                return
+            }
+            setpage(page-=1)
+            window.scrollTo(0, 0);
+        }
+       
+       getTrendingGame(page)
+
+
+    }
+
+  
 
     useEffect(() => {
-        getTrendingGame()
+        getTrendingGame(page)
         
-      },[]);
-    async function getTrendingGame() {
+      },[page]);
+    async function getTrendingGame(page) {
 
         try{
-    let response = await fetch(`https://rawg.io/api/games/lists/main?page=1`);
+    let response = await fetch(`https://rawg.io/api/games/lists/main?page=${page}`);
     let data = await response.json()
     //Api returns duplicate results,filter duplicate
     let results = data.results.reduce((unique, o) => {
@@ -27,6 +54,9 @@ function Home() {
 
             return unique;
     },[])
+    let next = data.next
+    setnext(next)
+
 
     setgame(results)
 
@@ -45,6 +75,8 @@ function Home() {
                 { games ? games.map(game => ( 
                 <GameInfo key={game.id} games={game} /> )): null}
             </div> 
+
+            <LoadMore load={Load} />
 
         </div>
     )

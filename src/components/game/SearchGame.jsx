@@ -1,10 +1,10 @@
-import React , {useState} from 'react'
+import React from 'react'
 import './SearchGame.scss'
 
 
 function SearchGame() {
     
-    const [query, setstate] = useState('')
+    // const [query, setstate] = useState('')
 
 
 
