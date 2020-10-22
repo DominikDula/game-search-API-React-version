@@ -10,6 +10,7 @@ function TheNavigation() {
                 <NavLink exact to="/">Home</NavLink>
                 <NavLink to="/developers">Developers</NavLink>
                 <NavLink to="/games">All games</NavLink>
+                <NavLink to="/genres">Genres</NavLink>
 
             </div>
         </div>

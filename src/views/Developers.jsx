@@ -1,6 +1,6 @@
 import React, {useState ,useEffect} from 'react'
 
-import DeveloperList from '../components/developer/DeveloperList.jsx'  ;
+import TemplateList from '../components/TemplateList.jsx'  ;
 import LoadMore from '../components/LoadMore.jsx'  ;
 
 function Developers() {
@@ -65,7 +65,7 @@ function Developers() {
 <div >
     <div className="grid-container">
         { developers ? developers.map(developer => ( 
-        <DeveloperList key={developer.id} developers={developer} /> )): null}
+        <TemplateList key={developer.id} item={developer} /> )): null}
     </div>
     <LoadMore load={Load} />
 

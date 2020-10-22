@@ -1,0 +1,19 @@
+
+
+
+
+.easing-enter {
+    transform: translate3d(-100%, 0, 0);
+  }
+  .easing-enter.easing-enter-active {
+    transform: translate3d(0, 0, 0);
+    transition: all 600ms;
+  }
+  .easing-exit {
+    transform: translate3d(0, 0, 0);
+  }
+  .easing-exit.easing-exit-active {
+    transform: translate3d(-100%, 0, 0);
+    transition: all 600ms;
+  }
+  
