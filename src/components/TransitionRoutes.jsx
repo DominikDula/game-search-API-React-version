@@ -15,6 +15,11 @@ import SingleGame from "../views/SingleGame.jsx";
 import Genres from '../views/Genres';
 import SingleDeveloper from '../views/SingleDeveloper';
 import SingleGenre from '../views/SingleGenre';
+import GlobalSearch from '../views/GlobalSearch';
+import Tags from '../views/Tags';
+import SingleTag from '../views/SingleTag';
+import Platforms from '../views/Platforms';
+import SinglePlatform from '../views/SinglePlatform';
 
 function TransitionRoutes({location}){
     
@@ -26,9 +31,14 @@ function TransitionRoutes({location}){
               <Route exact path='/developers' component={Developers}/>
               <Route exact path='/genres' component={Genres}/>
               <Route exact path='/games' component={AllGames}/>
+              <Route exact path='/tags' component={Tags}/>
+              <Route exact path='/platforms' component={Platforms}/>
+              <Route exact path='/search/:slug' component={GlobalSearch}/>
               <Route path='/games/:slug' component={SingleGame}/>
               <Route path='/developers/:slug' component={SingleDeveloper}/>
               <Route path='/genres/:slug' component={SingleGenre}/>
+              <Route path='/tags/:slug' component={SingleTag}/>
+              <Route path='/platforms/:id/:slug' component={SinglePlatform}/>
           </Switch>
         </CSSTransition>
         </SwitchTransition>

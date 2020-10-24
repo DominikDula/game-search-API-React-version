@@ -16,7 +16,7 @@ function DeveloperList(props) {
     const {item} = props
     return (
         <div className="item-info" style={{backgroundImage: "url(" + item.image_background + ")"}}  >   
-            <Link className="router-item" to={location.pathname + '/'+ item.slug}  >
+            <Link className="router-item" to={ location.pathname === "/platforms" ? location.pathname + '/'+ item.id + '/'+item.slug : location.pathname + '/'+ item.slug}  >
                 <div className="item-name">                
                     <h1>{item.name}</h1>
                 </div>

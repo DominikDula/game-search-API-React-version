@@ -142,3 +142,61 @@
                 border-bottom: 1px solid yellow;
             }
         }
+
+.stores-div{    
+    max-width: $base-width;
+    margin: 0 auto;
+
+    .stores-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stores{
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .single-store{
+        position: relative;
+        height: 150px;
+        margin: 0.6em;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-radius: $border-small;
+        overflow: hidden;
+        
+        a{
+            color: white;
+            padding: 0.5em;
+            border-radius: $border-large;
+            text-decoration: none;
+            background: #ff0000b0;
+        }
+
+        
+    }
+
+    .single-store::after{
+        content: '';
+        background-color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+    }
+
+    .gallery{
+        width: 50%;
+    }
+}

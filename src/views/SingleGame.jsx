@@ -1,5 +1,8 @@
 import React, {useState ,useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import { Link} from "react-router-dom";
+
+import GameScreenshots from '../components/game/GameScreenshots.jsx'  ;
 
 
 import './SingleGame.scss';
@@ -11,7 +14,6 @@ function SingleGame() {
     const [about, setabout] = useState('')
     const [longabout, setlongabout] = useState('')
     const [shortabout, setshortabout] = useState('')
-    const [releaseDate, setreleaseDate] = useState('')
     const [boolean, setboolean] = useState(true)
 
 
@@ -31,12 +33,11 @@ function SingleGame() {
             let about = data.description.substring(0,550) +'...'
             let shortabout = data.description.substring(0,550)
             let longabout = data.description
-            let releasDate = data.released.split('-').reverse().join('.')
             setgame(results)
             setabout(about)
             setshortabout(shortabout)
             setlongabout(longabout)
-            setreleaseDate(releasDate)
+
 
             }
         catch (error) {
@@ -85,27 +86,27 @@ function SingleGame() {
                     <section>
                         <h3>Genres</h3>
                             {game ? game.genres.map( genre =>(
-                               <a href="/#" key={genre.id}>{genre.name}</a>
+                               <Link to={"/genres/" + genre.slug} key={genre.id}>{genre.name}</Link>
                             )) :null} 
                     </section>
                     <section>
                         <h3>Developers</h3>
                         {game ? game.developers.map( developer =>(
-                               <a href="/#" key={developer.id}>{developer.name}</a>
+                               <Link to={"/developers/" + developer.slug} key={developer.id}>{developer.name}</Link>
                             )) :null} 
                     </section>
 
                     <section>
                         <h3>Platforms</h3>
                         {game ? game.platforms.map( platform =>(
-                               <a href="/#" key={platform.platform.id}>{platform.platform.name}</a>
+                               <Link to={"/platforms/" + platform.platform.id + '/'+platform.platform.slug} key={platform.platform.id}>{platform.platform.name}</Link>
                             )) :null} 
                     </section>
 
                     <section>
                         <h3>Tags</h3>
                         {game ? game.tags.map( tag =>(
-                               <a href="/#" key={tag.id}>{tag.name}</a>
+                               <Link to={"/tags/" + tag.slug} key={tag.id}>{tag.name}</Link>
                             )) :null} 
                     </section>  
 
@@ -115,6 +116,23 @@ function SingleGame() {
 
 
         </div>
+        <div className="stores-div">
+            <div className="stores-container">
+                <h1>Stores</h1>
+                <div className="stores">
+                    {game ? game.stores.map(store => (
+                        <div className="single-store" key={store.id} style={{backgroundImage: 'url(' + store.store.image_background + ')'}} >
+                            <h2>{store.store.name}</h2>
+                            <a rel="noopener noreferrer" target="_blank" href={store.url}>Go to Store</a>
+                        </div>
+                    ) ) :null}
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <GameScreenshots slug={slug} />
         </div>
     )
 }

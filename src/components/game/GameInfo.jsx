@@ -1,7 +1,6 @@
 import React,{useState , useEffect} from 'react'
 
 import { Link} from "react-router-dom";
-
 import './GameInfo.scss'
 
 function GameInfo(props) {
@@ -16,11 +15,13 @@ function GameInfo(props) {
         //remove last coma from genres//
          if(isHidden){
             let genre = document.querySelector(".genre")
+            if(!genre.lastChild){
+                return 
+            }
             genre.lastChild.textContent = genre.lastChild.textContent.replace(',',' ') 
-
             
         } 
-    }, [])
+    }, [isHidden])
 
 
    function PlayVideo(event){
@@ -67,15 +68,11 @@ function GameInfo(props) {
     }   
 
    function ShowOnHover(){
-
         setisHidden(true)
-
     }
 
     function HideOnHover(){
-
         setisHidden(false)
-
     }
 
 
@@ -130,7 +127,7 @@ function GameInfo(props) {
                             <span className="genre"> 
  
                                 {games ? games.genres.slice(0,3).map( genre =>(
-                               <a href="/#" key={genre.id}>{genre.name}, </a>
+                               <Link to={"/genres/" + genre.slug} key={genre.id}>{genre.name}, </Link>
                             )) :null} 
    
     
