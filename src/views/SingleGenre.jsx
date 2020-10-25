@@ -7,7 +7,6 @@ import GameInfo from '../components/game/GameInfo.jsx'  ;
 import LoadMore from '../components/LoadMore.jsx'  ;
 import SingleTemplate from '../components/creators/SingleTemplate.jsx'  ;
 
-import './SingleGenre.scss';
 
 
 function SingleGenge() {

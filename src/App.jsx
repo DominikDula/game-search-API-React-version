@@ -7,6 +7,7 @@ import './App.scss';
 import TheNavigation from './components/TheNavigation.jsx'  ;
 import SearchGame from './components/game/SearchGame.jsx'  ;
 import TransitionRoutes from './components/TransitionRoutes.jsx'  ;
+import TheFooter from './components/TheFooter.jsx'  ;
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <TheNavigation />
         <SearchGame />
         <TransitionRoutes />
+        <TheFooter />
       
       
 

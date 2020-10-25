@@ -43,12 +43,12 @@ function TheNavigation() {
     return (
         <div className="nav-container">
             <div onClick={NavClick}  id="nav" className=" navigation" className={isActive ? 'navigation' : isNotActive ? 'navigation navigation-show' : ''}>
-                <NavLink exact to="/">Home</NavLink>
-                <NavLink to="/developers">Developers</NavLink>
-                <NavLink to="/games">All games</NavLink>
-                <NavLink to="/genres">Genres</NavLink>
-                <NavLink to="/tags">Tags</NavLink>
-                <NavLink to="/platforms">Platforms</NavLink>
+                <NavLink activeClassName={'active'} exact to="/">Home</NavLink>
+                <NavLink activeClassName={'active'} to="/developers">Developers</NavLink>
+                <NavLink activeClassName={'active'} exact to="/games">All games</NavLink>
+                <NavLink activeClassName={'active'} to="/genres">Genres</NavLink>
+                <NavLink activeClassName={'active'} to="/tags">Tags</NavLink>
+                <NavLink activeClassName={'active'} to="/platforms">Platforms</NavLink>
 
             </div>
             <div className="hamburger">
