@@ -4,16 +4,16 @@ import './TheFooter.scss'
 
 function TheFooter() {
     return (
-    <div  class="footer" >
-        <div class="project-info">
-            <div class="database">
+    <div  className="footer" >
+        <div className="project-info">
+            <div className="database">
             <p>Database and design inspiration</p>
             <a href="https://rawg.io/" target="_blank">
                 <img src ={require("../assets/rawg-logo.png")}  alt="" />
             </a>
             </div>
             
-            <div class="vue">
+            <div className="vue">
                 <p>Project built with</p>
             <a href="https://reactjs.org/" target="_blank">
                 <img src ={require("../assets/logo512.png")} alt="" />

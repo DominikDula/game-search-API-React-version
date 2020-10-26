@@ -33,6 +33,7 @@ function GameInfo(props) {
 
     }
 
+
    function StopVideo(event){
         event.target.parentElement.classList.remove("game-video-show");
         setshowIcon(true)
@@ -91,7 +92,7 @@ function GameInfo(props) {
                         <h1>{games.name}</h1>
                     </div>
                     <div className="game-video">
-                        <video onMouseEnter={PlayVideo} onMouseLeave={StopVideo} className="videos"    loop  muted >
+                        <video onTouchStartCapture={PlayVideo} onTouchEndCapture={StopVideo} onMouseEnter={PlayVideo} onMouseLeave={StopVideo} className="videos"    loop  muted >
                             <source src={games.clip ? games.clip.clips['640'] :null} type="video/mp4" />
                         </video>
                     </div>

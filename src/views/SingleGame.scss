@@ -200,3 +200,53 @@
         width: 50%;
     }
 }
+
+        
+@media (max-width: 860px){
+    .bg-image{
+        height: 600px;
+    }
+
+    .single-game-name{
+        font-size: 1.1em;
+        justify-content: center;
+        
+    }
+    .single-game-container{
+        max-width: 100%;
+        margin: 180px auto;
+        flex-direction: column;
+        padding: 25px;
+
+        h1{
+            left: 25px;
+        }
+        
+    }
+
+   
+    .single-game-desc,.single-game-wrapper{
+        width: 100%;
+    }
+    .single-game-wrapper{
+        margin-top: 2em;
+    }
+    .single-game-detail{
+        section{
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+@media( max-width:600px) {
+
+.stores-div{
+
+    .stores{
+            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+    }
+    
+}

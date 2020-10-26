@@ -25,7 +25,7 @@ function TransitionRoutes({location}){
     
     return(
         <SwitchTransition mode={'out-in'} component="main">
-        <CSSTransition  timeout={500} classNames='easing' key={location.key}>
+        <CSSTransition  timeout={500} classNames='easing' key={location.pathname}>
           <Switch location={location}>
               <Route exact path='/' component={Home}/>
               <Route exact path='/developers' component={Developers}/>
