@@ -12,7 +12,7 @@ function SingleTemplate(props) {
 
     return (
         <div className="platform">
-        <h1>{info.name}</h1>
+        <h1 className="platform-h1" >{info.name}</h1>
        {info.description ?
        <article  style={{ backgroundImage: 'url(' + info.image_background + ')' }} dangerouslySetInnerHTML={textFromHtml()}></article> :null } 
     </div>

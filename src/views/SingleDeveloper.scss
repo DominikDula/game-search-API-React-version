@@ -1,6 +1,6 @@
 @import 'src/assets/scss/_variables';
 
- h1{
+ .developer-h1{
     max-width: $base-width;
     margin: 30px auto 0; 
     display: flex;
@@ -13,7 +13,7 @@
 
 @media (max-width: 655px) { 
     
-    h1{
+    .developer-h1{
         font-size: 1.3em;
     }
     

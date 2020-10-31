@@ -60,7 +60,7 @@ function GlobalSearch() {
     }
     return (
     <div>
-        <h1>Results for "{slug}"</h1>
+        <h1 className="global-search-h1" >Results for "{slug}"</h1>
         <div className="grid-container">
             {searchgames ? searchgames.map(game => (
                 <GameInfo key={game.id} games={game} />

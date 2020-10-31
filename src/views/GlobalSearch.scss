@@ -1,6 +1,6 @@
 @import 'src/assets/scss/_variables';
 
-h1{
+.global-search-h1{
     max-width: $base-width;
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@ h1{
 
 @media (max-width: 655px) { 
     
-   h1{
+   .global-search-h1{
         font-size: 1.3em;
     }
     

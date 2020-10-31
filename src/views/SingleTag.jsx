@@ -73,7 +73,7 @@ function SingleTag() {
 
     return (
         <div>
-            <h1>{info.name}</h1>
+            <h1 className="developer-h1">{info.name}</h1>
             <div className="grid-container">
                 {tags ? tags.map(tag => (
                     <GameInfo key={tag.id} games={tag} />

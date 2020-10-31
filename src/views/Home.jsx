@@ -70,7 +70,7 @@ function Home() {
 
     return (
         <div className="home" >
-            <h1>New and Trending</h1>
+            <h1 className="home-h1" >New and Trending</h1>
             <div className="grid-container">
                 { games ? games.map(game => ( 
                 <GameInfo key={game.id} games={game} /> )): null}
