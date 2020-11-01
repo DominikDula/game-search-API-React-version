@@ -22,7 +22,7 @@ function GameScreenshots(props) {
 
     return (
     <div>
-        <h1>Gallery</h1>
+        <h1 className="developer-h1">Gallery</h1>
         <div  className="image-grid">
             {results? results.map((image) => {
                 return <img   key={image.id} src={image.image} />              
